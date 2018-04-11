@@ -201,3 +201,5 @@ A few words about interfaces:
 * Here's why:
 
 .play -edit examples/interfaces4.go /START OMIT/,/END OMIT/
+
+.link https://gobyexample.com/interfaces Interfaces on Go by example
