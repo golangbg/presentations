@@ -1,0 +1,203 @@
+Go Language Mechanics
+Structs, embedding and composition
+11 Apr 2018
+Tags: go, golang, bulgaria, structs, embedding, composition
+
+Arjan van Eersel
+arjan@golangbg.org
+@arjanvaneersel
+
+
+* License and Materials
+
+This presentation is licensed under the [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0 International]] licence.
+
+The materials for this presentation are available on GitHub:
+
+.link https://github.com/golangbg/presentations/language-mechanics-composition
+
+You are encouraged to remix, transform, or build upon the material, providing you distribute your contributions under the same license.
+
+* Basic types in Go
+
+Concrete types
+
+    bool
+
+    string
+
+    int  int8  int16  int32  int64
+    uint uint8 uint16 uint32 uint64 uintptr
+    // uintptr is an integer type that is large enough to hold the bit pattern of any pointer
+
+    byte // alias for uint8
+
+    rune // alias for int32, represents a Unicode code point
+
+    float32 float64
+
+    complex64 complex128
+    // complex64 is the set of all complex numbers with float32 real and imaginary parts
+    // complex128 is the set of all complex numbers with float64 real and imaginary parts
+
+.link https://golang.org/pkg/builtin/#ComplexType Go documentation on basic types
+.link https://tour.golang.org/basics/11 Go tour on basic types
+
+* Basic types in Go
+
+Maps and slices
+
+.play -edit examples/basic2.go
+
+Before the Go spec until 3th of April, 2013 these types and `chan` were called "reference types". Allthough often still referred to as such, it's formally incorrect, as technically these types are much more than syntactical pointers nowadays.
+
+.link https://tour.golang.org/moretypes/7 Go tour on slices
+.link https://tour.golang.org/moretypes/19 Go tour on maps
+
+* Values and pointers
+
+Go is all about *semantics* and the two flavours are:
+- *Value* semantics
+- *Pointer* semantics
+
+When using *value* semantics:
+- We are working with a variable through copies of the value
+- The object is stored on the stack
+
+When using *pointer* semantics:
+- We are working through a reference to the variable's location in memory (sharing)
+- The object is stored on the heap
+
+* Values and pointers: Example 1
+.play -edit examples/pointers.go /START OMIT/,/END OMIT/
+
+* Values and pointers: Example 2
+.play -edit examples/pointers2.go /START OMIT/,/END OMIT/
+
+* Values and pointers: Example 3
+.play -edit examples/pointers3.go /START OMIT/,/END OMIT/
+
+.link https://tour.golang.org/moretypes/1 Go tour on pointers
+
+* Structs
+
+Structs offer a very powerful way to organize data as a custom type
+
+    type animal struct {
+        name   string
+        age    int
+    }
+
+.link https://tour.golang.org/moretypes/2 Go tour on structs
+
+* Structs
+
+Structs can contain behaviour (methods) as well
+
+.play -edit examples/structs1.go /START OMIT/,/END OMIT/
+
+* Methods
+
+- Methods in Go are functions bound to a `type` through a reflector
+- Reflectors can follow *value* or *pointer* semantics
+
+.play -edit examples/structs2.go /START OMIT/,/END OMIT/
+
+* Using reflectors on standard types
+Reflectors are NOT limited to structs only. You can perfectly create custom types based upon standard types and add behaviour to them through reflectors.
+
+.play -edit examples/reflectors.go
+
+* Reflectors under the hood
+
+.play -edit examples/reflectors2.go /START OMIT/,/END OMIT/
+
+* Data oriented design
+
+- Effective use of Go and its full capabilities is *ALL* about data oriented design
+- Be consequent: Don't mix value and pointer semantics, to offer a consequent API
+
+*General* *guidelines*:
+- Primitive types?
+  Value semantics (as we don't want to pollute the heap)
+- Maps, slices, channels?
+  Value semantics (unless you're doing things like unmarshalling)  
+- Types that generally only live for a short time?
+  Value semantics
+- Need to modify struct attributes?
+  Pointer semantics
+- Working with unique objects that need to be shared?
+  Pointer semantics
+
+* Composition
+
+When working with Go, keep in mind:
+
+- Classes, inheritance, getters and setters is Java stuff
+- Don't (try to) write OOP code. Decoupling of data can be useful, but things that look like "abstract classes" usually indicate a bad design
+- In Go we care about *behaviour*, not hierarchy
+
+.image img/horse.jpg
+
+* Embedding
+
+.play -edit examples/embedding1.go /START OMIT/,/END OMIT/
+
+* Embedding
+
+.play -edit examples/embedding2.go /START OMIT/,/END OMIT/
+
+* Embedding of methods
+
+.play -edit examples/embedding3.go /START OMIT/,/END OMIT/
+
+* Now that was some seriously *BAD* code
+
+.image img/panic.jpg
+
+* Type definition guidelines
+
+- Declare types that represent something new or unique
+- Ensure a type is used on its own
+- Use embedding to reuse behaviours
+- Question types that are an alias or abstraction
+
+* Decoupling
+
+.play -edit examples/composition1.go /START OMIT/,/END OMIT/
+
+* Decoupling
+
+.play -edit examples/composition2.go /START OMIT/,/END OMIT/
+
+* Interfaces
+Interfaces is a powerful tool to group things by their *behaviour*.
+
+A few words about interfaces:
+
+- Interfaces are valueless and abstract, meaning they don't define *state*, but *behaviour*
+- Concrete types can have methods, interfaces can't
+- Integrity on semantics is even more important with interfaces
+- Interfaces are not as flexible as concrete methods
+
+* Interfaces
+
+.play -edit examples/interfaces1.go /START OMIT/,/END OMIT/
+
+* Interfaces
+
+.play -edit examples/interfaces2.go /START OMIT/,/END OMIT/
+
+* Interfaces and pointer receivers
+
+.play -edit examples/interfaces3.go /START OMIT/,/END OMIT/
+
+* Interfaces and pointer receivers
+
+.image img/why.jpg
+
+.html html/methodset_rules.html
+
+* Here's why:
+
+.play -edit examples/interfaces4.go /START OMIT/,/END OMIT/
