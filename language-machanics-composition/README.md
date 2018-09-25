@@ -1,7 +1,7 @@
 # Go Language Mechanics
 ## Structs, embedding and composition
 
-[View this presentation online](https://talks.godoc.org/github.com/golangbg/presentations/tree/master/language-machanics-composition/presentation.slide)
+[View this presentation online](https://talks.godoc.org/github.com/golangbg/presentations/language-machanics-composition/presentation.slide)
 
 ## License and Materials
 

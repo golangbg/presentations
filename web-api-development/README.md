@@ -1,7 +1,7 @@
 # Go for web
 ## Web and API development
 
-[View this presentation online](https://talks.godoc.org/github.com/golangbg/presentations/tree/master/web-api-development/presentation.slide)
+[View this presentation online](https://talks.godoc.org/github.com/golangbg/presentations/web-api-development/presentation.slide)
 
 ## License and Materials
 
