@@ -1,0 +1,105 @@
+Go for web
+Web and API development
+26 Sep 2018
+Tags: go, golang, bulgaria, web development, api development
+
+Arjan van Eersel
+arjan@golangbg.org
+@arjanvaneersel
+
+* License and Materials
+
+This presentation is licensed under the [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0 International]] licence.
+
+The materials for this presentation are available on GitHub:
+
+.link https://github.com/golangbg/presentations/tree/master/language-machanics-composition
+
+You are encouraged to remix, transform, or build upon the material, providing you distribute your contributions under the same license.
+
+* Why use Go for web and API development?
+
+Some general facts:
+
+- Go was developed by Google in 2007 (one year after the first dual core processor was launched by Intel)
+- Developed by experts such as Rob Pike, Ken Thompson, Robert Griesemer
+- Takes advantage of multiple cores
+- Easy concurrency
+- Compiled, statically typed, garbage collection
+- Open source, community driven
+- Some other users: Aerospike, BBC Worldwide, Bitbucket, Booking.com, Core OS, Datadog, Digital Ocean, Docker, Dropbox, Facebook, Getty Images, GitHub, GOV.UK, Heroku, IBM, Intel, InfluxDB, Iron.io, Kubernetes, Medium, MongoDB, Mozilla services, Netflix, New York Times, pool.ntp.org, Rackspace, Shutterfly, SmugMug, SoundCloud, SpaceX, Square, Stack Exchange, Thomson Reuters Eikon, Tumblr, Twitch, Twitter, Uber, VMWare ... 
+
+.link https://golang.org/doc/faq#creating_a_new_language FAQ: Why did you create a new language?
+
+* My motivation
+
+- Go offers the right balance between performance and code readability
+- No large deployment stack required (i.e. LAMP). Instead Go creates small binaries which are easy to deploy (i.e. systemd, container, etc).
+- Resource friendly
+- The language offers enough of functionality to not need any (heavy) frameworks
+- Early adaptor of new technologies (i.e. Webassembly)
+
+.image img/golang.jpg
+
+* Things to keep in mind
+
+- Doing web and API development in Go might take more efforts in the beginning, because of the lack of some of the comforts frameworks such as Django, Rails, etc offer
+- No predefined design such as MVC. If you want MVC, it's up to you to implement things that way
+- You are in control
+
+* Anatomy of a Go program
+
+.play -edit examples/anatomy.go
+
+* Anatomy of a Go HTTP server
+.play -edit examples/server.go
+
+* A custom server for more control
+.play -edit examples/custom_server.go /START OMIT/,/END OMIT/
+
+.link https://golang.org/pkg/net/http/ The net/http package
+
+* Handler interface vs HandleFuncs
+.play -edit examples/handlers.go /START OMIT/,/END OMIT/
+
+* Libraries
+
+Libraries can help to take off the rough edges of web development with Go.
+
+My personal preference is Gorilla web toolkit, which is an open source toolkit (not a framework!) offering various packages such as for routing and sessions.
+
+.link http://www.gorillatoolkit.org/ Gorilla web toolkit
+
+.image img/gorilla.png
+
+Of course there are other libraries too. Try them and see which one you like most.
+
+* Routing
+
+.play -edit examples/routing.go /START OMIT/,/END OMIT/
+
+* Templates
+
+.play -edit examples/templates.go /START OMIT/,/END OMIT/
+Templates can parse HTML strings and files (ParseFiles function)
+
+.link https://golang.org/pkg/html/template/ HTML templates
+
+* JSON
+
+.play -edit examples/json.go /START OMIT/,/END OMIT/
+
+.link https://golang.org/pkg/encoding/json/ JSON encoding/decoding
+.link https://golang.org/pkg/encoding/xml/ XML encoding/decoding
+
+* Enough theory, demo time!
+
+A basic blog application with:
+
+- SQLite database
+- An API and frontend
+- Authentication
+- Sessions
+- Middleware
+- Working with forms
+- Some of the patterns I use in practise
