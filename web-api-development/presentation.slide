@@ -66,7 +66,7 @@ Some general facts:
 
 Libraries can help to take off the rough edges of web development with Go.
 
-My personal preference is Gorilla web toolkit, which is an open source toolkit (not a framework!) offering various packages such as for routing and sessions.
+My personal preference is Gorilla web toolkit, which is an open source toolkit (not a framework!) offering various packages such as routing and sessions.
 
 .link http://www.gorillatoolkit.org/ Gorilla web toolkit
 
