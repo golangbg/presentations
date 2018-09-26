@@ -59,7 +59,7 @@ Some general facts:
 
 .link https://golang.org/pkg/net/http/ The net/http package
 
-* Handler interface vs HandleFuncs
+* Implementing the Handler interface directly
 .play -edit examples/handlers.go /START OMIT/,/END OMIT/
 
 * Libraries

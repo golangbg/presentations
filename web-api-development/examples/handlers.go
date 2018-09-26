@@ -17,7 +17,7 @@ func (g GreetHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	// Link the root path to rootHandler
+	// This time we're using http.Handle instead of http.HandleFunc and a direct instance of GreetHandler
 	http.Handle("/", GreetHandler{"Blah blah blah дрън дрън дрън"})
 
 	// Custom server
