@@ -1,0 +1,128 @@
+Global Tech Summit
+An overview of the Go community in Bulgaria
+27 Nov 2018
+Tags: go, golang, bulgaria
+
+Arjan van Eersel
+arjan@golangbg.org
+@arjanvaneersel
+
+* License and Materials
+
+This presentation is licensed under the [[https://creativecommons.org/licenses/by-sa/4.0/][Creative Commons Attribution-ShareAlike 4.0 International]] licence.
+
+The materials for this presentation are available on GitHub:
+
+.link https://github.com/golangbg/presentations/web-api-development
+
+You are encouraged to remix, transform, or build upon the material, providing you distribute your contributions under the same license.
+
+* The Go programming language
+
+Some general facts:
+
+- Go was developed by Google in 2007 (one year after the first dual core processor was launched by Intel)
+- Developed by experts such as Rob Pike, Ken Thompson, Robert Griesemer
+- Takes advantage of multiple cores
+- Easy concurrency
+- Compiled, statically typed, garbage collection
+- Open source, community driven
+- Some other users: Aerospike, BBC Worldwide, Bitbucket, Booking.com, Core OS, Datadog, Digital Ocean, Docker, Dropbox, Facebook, Getty Images, GitHub, GOV.UK, Heroku, IBM, Intel, InfluxDB, Iron.io, Kubernetes, Medium, MongoDB, Mozilla services, Netflix, New York Times, pool.ntp.org, Rackspace, Shutterfly, SmugMug, SoundCloud, SpaceX, Square, Stack Exchange, Thomson Reuters Eikon, Tumblr, Twitch, Twitter, Uber, VMWare ... 
+
+.link https://golang.org/doc/faq#creating_a_new_language FAQ: Why did you create a new language?
+
+* My motivation
+
+- Go offers the right balance between performance and code readability
+- No large deployment stack required (i.e. LAMP). Instead Go creates binaries which are easy to deploy (i.e. systemd, container, etc).
+- Resource friendly
+- The language offers enough of functionality to not need any (heavy) frameworks
+- Early adaptor of new technologies (i.e. Webassembly)
+
+.image img/golang.jpg
+
+* Building a Go community in Bulgaria
+
+- Go Bulgaria held its first meetup in May 2017 in Sofia
+- The group started with around 40 members
+- In May 2018 a second meetup started in Plovdiv
+- At the moment we're having 387 members in Sofia and 77 members in Plovdiv
+- Hosts in Sofia are Boyan Bonev, Ivan Borshukov and Arjan van Eersel
+- Hosts in Plovdiv are Rangel Ivanov and Arjan van Eersel
+
+.image img/logo.png 250 _
+
+* Sofia hosts
+
+.image img/team.jpg 550 _
+
+* Things we do
+
+- Meetups are held regularly
+- Latest and greatest about Go
+- Tutorials and lectures for beginners and advanced Go programmers
+- Presentations by companies, organisations and projects using Go, such as Uber, Hyperledger and Stremio
+- Community partnerships and participation
+
+* Meetups
+
+.image img/meetup1.jpeg 550 _
+
+* Meetups
+
+.image img/meetup3.jpeg 550 _
+
+* Meetups
+
+.image img/meetup4.jpeg 550 _
+
+* Meetup @ Uber
+
+.image img/go-uber1.jpeg 550 _
+
+* Meetup @ Uber
+
+.image img/go-uber2.jpeg 550 _
+
+* Community partnerships
+
+.image img/meetup2.jpeg 550 _
+
+* Workshops
+
+- Our first full day workshop about microservices with Go and Kubernetes was held in October 2018 
+- Lector was Elena Grahovac tech lead of N26 Bank, Germany
+- Free for participants thanks to the support of Uber and CampusX
+- Around 85 participants
+
+We plan to do more workshops in 2019.
+
+* Workshop micro services with Go and Kubernetes
+
+.image img/workshop1.jpg 550 _
+
+* Workshop micro services with Go and Kubernetes
+
+.image img/workshop2.jpg 550 _
+
+* Workshop micro services with Go and Kubernetes
+
+.image img/workshop3.jpg 550 _
+
+* Are you an (aspiring) Go programmer? Join us!
+
+Next meetup:
+
+11 December 2018 in Plovdiv: Live coding of a facebook bot
+
+- Drop by at our booth
+- Facebook: 
+.link https://fb.me/golangbg
+- Meetup Sofia: 
+.link https://www.meetup.com/golang-bulgaria
+- Meetup Plovdiv: 
+.link https://www.meetup.com/golang-bulgaria-plovdiv
+- Slack: 
+.link http://www.golangbg.org/slack 
+
+Join us, learn Go and have fun!
