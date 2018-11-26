@@ -21,7 +21,7 @@ You are encouraged to remix, transform, or build upon the material, providing yo
 
 Some general facts:
 
-- Go was developed by Google in 2007 (one year after the first dual core processor was launched by Intel)
+- Go was developed by Google in 2007
 - Developed by experts such as Rob Pike, Ken Thompson, Robert Griesemer
 - Takes advantage of multiple cores
 - Easy concurrency
